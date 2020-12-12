@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+{% extends 'accounts/dbase.html' %}
+{% load static %}
+
+
+
+<head>
+    <title>Home Page</title>
+
+    {% block styles %}
+    <link rel="stylesheet" href="{% static 'accounts/css/styler.css' %}">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+{% endblock %}
+</head>
+<body>
+    {% block content %}
+     <!-- Start of Main Body-->
+     <div class="Banner_image">
+        <div class="Banner-text">
+          <h1>Consultation at your Home!</h1>
+          <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, blanditiis!
+              <br>
+              similique enim sequi deleniti dolor ducimus, ea repellendus,
+              <br>
+               excepturi dicta sint numquam delectus maxime eaque! Voluptatibus, molestias aliquam. Nemo!
+            </p>
+          <button>Explore</button>
+        </div>
+      </div>
+      <!--Banner End-->
+        <div class="row ">
+            <div class = "middle">
+              <h2>Welcome to ODC - Consultation at your Home </h2>
+            </div> 
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure aperiam consequatur quo. Sed quis tortor magna. Maecenas hendrerit feugiat pulvinar. Aenean condimentum quam eu ultricies cursus.  Nulla facilisi. In hac habitasse platea dictumst. Ut nec tellus neque. Sed non dui eget arcu elementum facilisis.</p>
+        </div>
+
+     <!-- Caurosel Start -->
+     <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-interval="10000">
+            <img src="{%static 'accounts/images/BgI.jpg' %}" height="500" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item" data-interval="2000">
+            <img src="{%static 'accounts/images/Bg6.jpg' %}" height="500px" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{%static 'accounts/images/Bg7.jpg' %}" height="500px" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+     <!---->
+     
+                <h1 class="title text-center" id="contact">Contact Us</h1>
+                        <div class="leftside">
+                            <form role="form" id="footer-form">
+                                <div class="form-group has-feedback">
+                                    <label class="sr-only" for="name2">Name</label>
+                                    <input type="text" class="form-control" id="name2" placeholder="Name" name="name2" required>
+                                    <i class="fa fa-user form-control-feedback"></i>
+                                </div>
+                                <div class="form-group has-feedback">
+                                    <label class="sr-only" for="email2">Email address</label>
+                                    <input type="email" class="form-control" id="email2" placeholder="Enter email" name="email2" required>
+                                    <i class="fa fa-envelope form-control-feedback"></i>
+                                </div>
+                                <div class="form-group has-feedback">
+                                    <label class="sr-only" for="message2">Message</label>
+                                    <textarea class="form-control" rows="8" id="message2" placeholder="Message" name="message2" required></textarea>
+                                    <i class="fa fa-pencil form-control-feedback"></i>
+                                </div>
+                                <input type="submit" value="Send" class="btn btn-default">
+                            </form>
+                        </div>
+                    
+                        <div class="leftside"> 
+                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel nam magnam natus tempora cumque, aliquam deleniti voluptatibus voluptas. Maecenas ultrices finibus erat sit amet auctor. Curabitur et metus laoreet, fermentum quam sagittis, cursus augue. </p><br/>
+                            <p class="contacts"><i class="fa fa-map-marker"></i> 1508 Kembery Drive, Chicago, IL 60605 </p>
+                            <p class="contacts"><i class="fa fa-phone"></i> 202-314-1583</p>
+                            <p class="contacts"><i class="fa fa-envelope"></i> support@biss.com</p>
+                        </div>
+                    <br>
+      <footer>
+          <div class="foot">
+        Copyright © by SOAD_Group26.
+          </div>
+      </footer>
+
+      {% endblock %}
+      
+
+</body>
+</html>
