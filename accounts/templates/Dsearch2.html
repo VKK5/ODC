@@ -1,0 +1,49 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+      <div class = "middle">
+        <form method = "POST"action="{% url 'searchView' %}">
+          {% csrf_token %}
+          <div>
+              <label for="location">Enter Your latitude</label>
+              <input type="text" name="latitude" id="latitude">
+          </div>
+          <div>
+              <label for="typeOfSchool">Enter Your longitude</label>
+              <input type="text" name="longitude" id="longitude">
+          </div>
+          <div>
+              <input type="submit">
+          </div>
+          
+        <div class="card" style="width: 50rem;">
+        
+            <div class="card-body">
+              <h5 class="card-title">Doctor 1</h5>
+              <p class="card-text">
+                  <h5>Name: Dr.Venkat Rao</h5>
+                  <h6>Rated 4.7/10</h6>
+                  This Doctor is a specialist in Pediatrics. </p>
+              <a href="#" class="btn btn-primary">Request For Appointment</a>
+              <input type="date" id="birthday" name="Date for Appointment">
+            </div>
+          </div>
+          <br>
+          <div class="card" style="width: 50rem;">
+            
+            <div class="card-body">
+              <h5 class="card-title">Doctor 2</h5>
+              <p class="card-text">
+                  <h5>Name: Dr.Harish Rao</h5>
+                  <h6>Rated 4.5/10</h6>
+                  This Doctor is a specialist in Pediatrics. </p>
+              <a href="#" class="btn btn-primary">Request for Appointment</a>
+              <input type="date" id="birthday" name="Date for Appointment">
+              </div>
+            </div>
+           </div>
+       </div>
+
+
+{% endblock %}

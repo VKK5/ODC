@@ -22,8 +22,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('accounts.urls')),
     path('medstore/',include('medstore.urls')),
-     path('cart/',include('cart.urls')),
-     path('checkout/',include('checkout.urls')),
+    path('cart/',include('cart.urls')),
+    path('checkout/',include('checkout.urls')),
+    path('api/',include('accounts.api.urls')),
+    path('chat/',include('myapp.urls'))
 ]
 
 urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

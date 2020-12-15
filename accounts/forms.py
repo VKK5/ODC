@@ -8,6 +8,7 @@ class SignUpForm(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput())
     verify_password = forms.CharField(widget=forms.PasswordInput())
     verify_password = forms.CharField(widget=forms.PasswordInput())
+    doctor_id = forms.CharField()
     class Meta():
         model = User
         fields = ('username','first_name','last_name','email','password','verify_password','city','state','address','phone_number','is_patient','is_doctor')
@@ -21,5 +22,8 @@ class SignUpForm(forms.ModelForm):
         user.state=self.cleaned_data.get('state')
         user.address=self.cleaned_data.get('address')
         user.phone_number=self.cleaned_data.get('phone_number')
+        user.is_patient=self.cleaned_data.get('is_patient')
+        user.is_doctor=self.cleaned_data.get('is_doctor')
+
         user.save()
         return user

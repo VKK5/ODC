@@ -34,7 +34,7 @@
 {% block content %}
 <body>
   
-    <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+    <div class="page-wrapper body1">
         <div class="wrapper wrapper--w790">
             <div class="card card-5">
                 <div class="card-heading">
@@ -50,13 +50,13 @@
                                 <div class="row row-space">
                                     <div class="col-2">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="first_name">
+                                            <input class="input--style-5 " style="width: 400%;" type="text" name="first_name">
                                             <label class="label--desc">first name</label>
                                         </div>
                                     </div>
                                     <div class="col-2">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="last_name">
+                                            <input class="input--style-5" type="text" style="width: 400%; margin-left: -250%;" name="last_name">
                                             <label class="label--desc">last name</label>
                                         </div>
                                     </div>
@@ -103,6 +103,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="form-row">
                             <div class="name">Gender</div>
                             <div class="value">
@@ -136,7 +137,28 @@
                             </div>
                         </div>
                     </div>
-
+                    
+                    <div class="form-row p-t-20">
+                        <label class="label label--block">Category</label>
+                        <div class="p-t-15">
+                            <label class="radio-container m-r-55">Patient
+                                <input id="is_p" type="radio"  name="is_patient">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="radio-container">Doctor
+                                <input type="radio" name="is_doctor">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div id="doc_id_name" class="name">doctor ID</div>
+                        <div class="value">
+                            <div class="input-group">
+                                <input class="input--style-5" id="id_d" value=1 type="doctor_id" name="doctor_id">
+                            </div>
+                        </div>
+                    </div>
                     <div class="form-row">
                         <div class="name">password</div>
                         <div class="value">
@@ -155,19 +177,6 @@
                         </div>
                     </div>
 
-                        <div class="form-row p-t-20">
-                            <label class="label label--block">Category</label>
-                            <div class="p-t-15">
-                                <label class="radio-container m-r-55">Patient
-                                    <input type="radio"  name="is_patient">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <label class="radio-container">Doctor
-                                    <input type="radio" name="is_doctor">
-                                    <span class="checkmark"></span>
-                                </label>
-                            </div>
-                        </div>
                         <div>
                             <button class="btn btn--radius-2 btn--red" type="submit">Register</button>
                         </div>
@@ -176,6 +185,21 @@
             </div>
         </div>
     </div>
+    <script>
+        document.getElementById("is_p").addEventListener("change", function(){
+        //This input has changed
+       console.log('This Value is', this.value);
+        document.getElementById('id_d').type = "hidden";
+        document.getElementById('doc_id_name').innerHTML = "";
+        document.getElementById("id_d").value = 1
+    
+    });
+
+        
+    
+    
+        console.log(inputValue)
+      </script>
     <!-- Jquery JS-->
     <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
     <!-- Vendor JS-->

@@ -270,8 +270,14 @@ h6 {
 /* ==========================================================================
    #BACKGROUND
    ========================================================================== */
+
+.body1 {
+  background-image: url(Bg6.jpg);
+  background-size: cover;
+}
+
 .bg-blue {
-  background: #2c6ed5;
+  background: #22ac39;
 }
 
 .bg-red {

@@ -20,14 +20,18 @@ def registerView(request):
         form = SignUpForm(request.POST)
         print(form)
         print(form)
+        print(request.POST.get('is_patient'))
         if form.is_valid():
+            #print(user.is_patient)
+            #print(user.is_doctor)
+            # ikada petuko ra doctor ids itla
+            id_list = 25000
+            print(request.POST.get('doctor_id'))
+            if int(request.POST.get('doctor_id')) > id_list:
+                return HttpResponse("doctor id is invalid")
+                #return render(request,'dashboard.html') paina return tisesi itla katha template add chesko
             user = form.save()
-            print(user.is_patient)
-            print(user.is_doctor)
-
-            if user.is_doctor:
-                return HttpResponse("is a doctor")
-
+        
 
             form.cleaned_data.get('is_')
             print("form is valid")
@@ -60,3 +64,8 @@ def login_view(request):
         return render(request,'registration/login.html',{})
 
 
+def searchView(request):
+    if request.method == "POST":
+         return render(request,'DSearch2.html')
+    
+    return render(request,'DSearch.html')
